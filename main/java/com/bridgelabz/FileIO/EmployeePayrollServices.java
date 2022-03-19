@@ -8,8 +8,7 @@ public class EmployeePayrollServices {
 	 public enum IOService {CONSOLE_IO, FILE_IO, DB_IO, REST_IO}
 	    private List<EmployeePayrollData> employeePayrollList;
 
-	    public EmployeePayrollServices() {
-	    }
+	    public EmployeePayrollServices() {}
 
 	    public EmployeePayrollServices(List<EmployeePayrollData> employeePayrollList) {
 	        this.employeePayrollList = employeePayrollList;
@@ -26,7 +25,7 @@ public class EmployeePayrollServices {
 	    public void writeEmployeePayrollData(IOService ioService) {
 	        if(ioService.equals(IOService.CONSOLE_IO))
 	        System.out.println("\n Writing Employee Roaster to console\n " + employeePayrollList);
-	        //else if (ioService.equals(IOService.FILE_IO))
+	        else if (ioService.equals(IOService.FILE_IO))
 	            new EmployeePayrollFileIO().writeData(employeePayrollList);
 	    }
 
